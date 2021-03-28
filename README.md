@@ -27,7 +27,7 @@ Tables for one-to-many associations:
 
 	create table project(
 		id int primary key auto_increment,
-   	name varchar(30)
+   		name varchar(30)
 	);
 
 	create table programmers_projects(
