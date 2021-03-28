@@ -18,7 +18,7 @@ Tables for one-to-many associations:
 		foreign key (customer_id) references customer(id) 
 	);
 
-Tables for one-to-many associations:
+Tables for many-to-many associations:
 
 	create table programmer(
 		id int primary key auto_increment,
@@ -35,4 +35,18 @@ Tables for one-to-many associations:
     	project_id int not null,
     	foreign key (programmer_id) references programmer(id),
     	foreign key (project_id) references project(id)
+	);
+	
+Tables for one-to-one associations:
+
+	create table person(
+		id int primary key auto_increment,
+    	name varchar(20)
+	);
+
+	create table license(
+		id int primary key auto_increment,
+    	person_id int not null,
+    	type varchar(20) not null,
+		foreign key (person_id) references person(id)
 	);
